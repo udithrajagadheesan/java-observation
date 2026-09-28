@@ -1,0 +1,47 @@
+class Main {
+    public static void main(String[] args) {
+
+        try {
+
+            int a = 10;
+            int b = 0;
+
+            int result = a / b;
+
+            System.out.println(result);
+
+        } catch (ArithmeticException e) {
+
+            System.out.println("Cannot divide by zero");
+        }
+
+        System.out.println("Program continues...");
+    }
+}
+
+class AgeException extends Exception {
+
+    AgeException(String message) {
+        super(message);
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+
+        int age = 16;
+
+        try {
+
+            if (age < 18) {
+                throw new AgeException("Age must be 18 or above");
+            }
+
+            System.out.println("Eligible to vote");
+
+        } catch (AgeException e) {
+
+            System.out.println(e.getMessage());
+        }
+    }
+}

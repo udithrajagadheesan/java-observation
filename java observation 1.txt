@@ -1,0 +1,23 @@
+class Student {
+
+    // Constructor
+    Student() {
+        System.out.println("Student object created");
+    }
+
+    // Method
+    void display() {
+        System.out.println("Hello, I am a student");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+
+        // Creating an object
+        Student s1 = new Student();
+
+        // Calling the method
+        s1.display();
+    }
+} 

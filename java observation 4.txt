@@ -1,0 +1,74 @@
+// Parent class
+class Animal {
+    void eat() {
+        System.out.println("Animal eats");
+    }
+}
+
+// Single Inheritance
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+// Multilevel Inheritance
+class Puppy extends Dog {
+    void play() {
+        System.out.println("Puppy plays");
+    }
+}
+
+// Another child class for Hierarchical Inheritance
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Cat meows");
+    }
+}
+
+// Multiple Inheritance using interfaces
+interface Father {
+    void fatherProperty();
+}
+
+interface Mother {
+    void motherProperty();
+}
+
+class Child implements Father, Mother {
+
+    public void fatherProperty() {
+        System.out.println("Child gets father's property");
+    }
+
+    public void motherProperty() {
+        System.out.println("Child gets mother's property");
+    }
+}
+
+// Main class
+class Main {
+    public static void main(String[] args) {
+
+        System.out.println("----- Single Inheritance -----");
+        Dog d = new Dog();
+        d.eat();
+        d.bark();
+
+        System.out.println("\n----- Multilevel Inheritance -----");
+        Puppy p = new Puppy();
+        p.eat();
+        p.bark();
+        p.play();
+
+        System.out.println("\n----- Hierarchical Inheritance -----");
+        Cat c = new Cat();
+        c.eat();
+        c.meow();
+
+        System.out.println("\n----- Multiple Inheritance -----");
+        Child ch = new Child();
+        ch.fatherProperty();
+        ch.motherProperty();
+    }
+}

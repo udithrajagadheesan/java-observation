@@ -1,0 +1,40 @@
+// Abstract class
+abstract class Shape {
+
+    abstract void draw();
+}
+
+// Interface
+interface Color {
+
+    void showColor();
+}
+
+// Child class
+class Circle extends Shape implements Color {
+
+    // Implementing abstract method
+    void draw() {
+        System.out.println("Drawing Circle");
+    }
+
+    // Implementing interface method
+    public void showColor() {
+        System.out.println("Circle color is Red");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+
+        // Dynamic Method Dispatch
+        Shape s = new Circle();
+
+        s.draw();
+
+        // Interface reference
+        Color c = new Circle();
+
+        c.showColor();
+    }
+}

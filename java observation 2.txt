@@ -1,0 +1,70 @@
+// Abstract class
+abstract class Bank {
+
+    // Static member
+    static String bankName = "ABC Bank";
+
+    // Non-static member
+    private int balance;
+
+    // Constructor
+    Bank(int balance) {
+        this.balance = balance;
+    }
+
+    // Encapsulation using getter
+    public int getBalance() {
+        return balance;
+    }
+
+    // Encapsulation using setter
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    // Abstract method
+    abstract void displayAccountType();
+
+    // Non-static method
+    void displayBankName() {
+        System.out.println("Bank Name: " + bankName);
+    }
+}
+
+// Child class
+class SavingsAccount extends Bank {
+
+    SavingsAccount(int balance) {
+        super(balance);
+    }
+
+    // Implementing abstract method
+    void displayAccountType() {
+        System.out.println("Account Type: Savings Account");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+
+        // Creating object
+        SavingsAccount account = new SavingsAccount(5000);
+
+        // Static member
+        System.out.println("Bank: " + Bank.bankName);
+
+        // Non-static method
+        account.displayBankName();
+
+        // Encapsulation
+        System.out.println("Balance: " + account.getBalance());
+
+        // Abstract method
+        account.displayAccountType();
+
+        // Using setter
+        account.setBalance(7000);
+
+        System.out.println("Updated Balance: " + account.getBalance());
+    }
+}
